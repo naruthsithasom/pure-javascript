@@ -6,16 +6,42 @@
   <title>pure-javascript</title>
 </head>
 <body>
-  <div id='root'></div>
-  <hr>
-  <script></script>
+  <div id="root"></div>
+  <script src="https://unpkg.com/react@16.13.1/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16.13.1/umd/react-dom.development.js"></script>
   <script>
-    const rootElement =  document.getElementById('root')
-    const headingElement = document.createElement('h1')
-
-    headingElement.className = 'Hello-react-text'
-    headingElement.textContent = 'Hello, React !'
-    rootElement.append(headingElement)
+    const rootElement = document.getElementById("root")
+    const headingElement = React.createElement(
+      "h1",
+      {
+        className: "hello-react-text"
+      },
+      "Hello, React !"
+    )
+  ReactDOM.render(
+      headingElement,
+      rootElement
+    )
   </script>
+  <!-- <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script> -->
+  <!-- <script type="text/babel">
+    
+    const rootElement = document.getElementById("root")
+
+    function GreetingMessage(props){
+      return <h1>Welcome {props.name}</h1>
+    }
+
+    const element = <div className="container">
+      {GreetingMessage({ name: "React" })}
+      {GreetingMessage({ name: "Dean" })}
+      {GreetingMessage({ name: "New clear" })}
+    </div>
+
+    ReactDom.render(
+      element,
+      rootElement
+    )
+  </script> -->
 </body>
 </html>
