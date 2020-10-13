@@ -14,15 +14,21 @@
   <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
   <script type="text/babel">
     const rootElement = document.getElementById("root")
-    const name = 'New clear'
-    const className = "container"
-    const props = {
-      className: "container-test",
-      onClick: () => console.log("Hello your click")
+    
+    function GreetingMessage(props){
+      return <h1>Hello, {props.name}</h1>//propsคือส่งObjมา สาสรเรียกใช่ props.name
     }
-    const element = <div className={className}>
-      <h1 className="react-jsx-text">Using react jsx {name} </h1>
-      <button {...props}>click</button>
+    // const element = <div className="container">
+    //   {GreetingMessage({ name: "Dean.++."})}
+    //   {GreetingMessage({ name: "New clear"})}
+    //   {GreetingMessage({ name: "Mint"})}
+    // </div>
+    
+    //แบบย่อยVV
+      const element = <div className="container"> 
+      <GreetingMessage name= "Dean.++." />
+      <GreetingMessage name= "Mint" />
+      <GreetingMessage name= "New clear" />
     </div>
     ReactDOM.render(
       element,
